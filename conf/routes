@@ -7,7 +7,43 @@ GET     /                           controllers.HomeController.index
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
-GET     /message                    controllers.AsyncController.message
+GET     /message                        controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /club                           controllers.ClubController.getClub
+GET     /clubdetails                    controllers.ClubController.getClubDetails
+
+GET     /family                         controllers.FamilyController.getFamily
+POST     /family                         controllers.FamilyController.postFamily
+
+GET     /newfamily                      controllers.FamilyController.getNewFamily
+POST    /newfamily                      controllers.FamilyController.postNewFamily
+
+GET     /newathlete                    controllers.NewAthleteController.getNewAthlete
+POST    /newathlete                    controllers.NewAthleteController.postNewAthlete
+
+
+GET     /team                           controllers.TeamController.getTeam
+GET     /teamdetails/:teamId            controllers.TeamController.getTeamDetails(teamId:Integer)
+
+
+GET     /athlete                        controllers.AthleteController.getAthlete
+
+GET     /answer                         controllers.AnswerController.getAnswer
+GET     /answerdetails/:questionSetsId  controllers.AnswerController.getAnswerDetails(questionSetsId:Integer)
+
+GET     /course                         controllers.CourseController.getCourse
+
+GET     /questionset                    controllers.QuestionSetController.getQuestionSet
+
+GET     /landing                        controllers.LandingController.index
+
+GET     /exampage                       controllers.ExamPageController.getExamPage
+GET     /exampage2                       controllers.ExamPageController.getExamPage2
+GET     /exampage3                       controllers.ExamPageController.getExamPage3
+GET     /exampage4                       controllers.ExamPageController.getExamPage4
+GET     /exampage5                       controllers.ExamPageController.getExamPage5
+GET     /exampage6                       controllers.ExamPageController.getExamPage6
+ POST    /exampage6                        controllers.ExamPageController.postExamPage6

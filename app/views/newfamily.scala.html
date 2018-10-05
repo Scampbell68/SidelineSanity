@@ -1,0 +1,45 @@
+@(teams:List [Team], clubs:List[Club])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Family</title>
+</head>
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/jquery/jquery.min.js"></script>
+<script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<body>
+<div class="container-fluid">
+<h2>Add New Family</h2>
+<form method="POST">
+    @helper.CSRF.formField
+    <label>Name</label> <input id="familyName" name="familyName" type="text">
+
+
+    <label>E-mail</label> <input id="email" name="email" type="text"><br>
+    <label>Phone</label> <input id="phone" name="phone" type="text"><br>
+
+
+    <label for="clubid">Club : </label>
+    <select class="form-control" id="clubid" name="clubId">
+        @for(club <- clubs){
+        <option value="@club.getClubId">@club.getClubName</option>
+        }
+    </select>
+
+    <input type="submit" value="Save">
+</form>
+
+
+<ul>
+
+
+    <li><a href="landing">Home</a></li>
+    <li><a href="club">Club</a></li>
+    <li><a href="family">Family</a></li>
+    <li><a href="team">Team</a></li>
+    <li><a href="newathlete">Add a Player</a></li>
+</ul>
+</div>
+</body>
+</html>

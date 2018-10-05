@@ -1,0 +1,48 @@
+@(examPages:List[ExamPage])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Page 6</title>
+</head>
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/jquery/jquery.min.js"></script>
+<script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<body>
+
+<div class="container-fluid">
+
+    <form method="post">
+        @helper.CSRF.formField
+        <input type="hidden" name="familyId" value="1">
+
+
+        <h3>Answer these final question and hit "finish" to go back to your page. </h3>
+
+        <ul>
+
+
+            @for(examPage<-examPages){
+
+            <label>@examPage.getQuestionSetName</label>
+            <input type="radio"  name="@examPage.getQuestionSetsId" value="Yes">Yes
+            <input type="radio"  name="@examPage.getQuestionSetsId" value="No">No <br>
+            }
+
+        </ul>
+        <form action = "family">
+            <input type ="submit" value="Save and Return" >
+        </form>
+
+
+        <li><a href="family">Finish</a>
+
+        </li>
+        <input type="submit" value="Save">
+
+
+    </form>
+</div>
+</body>
+</html>
+

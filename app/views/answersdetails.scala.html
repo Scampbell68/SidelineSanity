@@ -1,0 +1,39 @@
+@(answerDetails:List[AnswerDetail])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Answer Report</title>
+</head>
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/jquery/jquery.min.js"></script>
+<script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<body>
+
+
+<table>
+
+    <th class="text-center">Club Id</th>
+    <th class="text-center">Question Name</th>
+    <th class="text-center">Question Id</th>
+    <th class="text-center">Answer Id</th>
+    <th class="text-center">Answer </th>
+
+    <th class="text-center">Certified Until</th>
+
+    @for(answerDetail<-answerDetails){
+    <tr>
+        <td class="text-center">@answerDetail.getClubId</td>
+        <td class="text-center">@answerDetail.getQuestionSetName</td>
+        <td class="text-center">@answerDetail.getQuestionSetsId</td>
+        <td class="text-center">@answerDetail.getAnswerId</td>
+        <td class="text-center">@answerDetail.getAnswerName</td>
+
+        <td class="text-center">@answerDetail.getCourseCompleted</td>
+        <td class="text-center">@answerDetail.getCourseCertificationEndDate</td>
+
+    </tr>}
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@(clubs:List[Club])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Club Names</title>
+</head>
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/jquery/jquery.min.js"></script>
+<script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<body>
+<table>
+    <tr>
+        <th>Club Name</th>
+
+    </tr>
+
+    @for(club<- clubs){
+    <tr>
+        <td><a href="/club/@club.getClubId">@club.getClubName</a> </td>
+    </tr>
+
+    }
+</table>
+
+<ul>
+
+    <h3>Navigation</h3>
+    <li><a href="landing">Home</a></li>
+    <li><a href="club">Club</a></li>
+    <li><a href="family">Family</a></li>
+    <li><a href="team">Team</a></li>
+    <li><a href="clubdetails">Club Detail</a></li>
+</ul>
+</body>
+</html>
+
+
+

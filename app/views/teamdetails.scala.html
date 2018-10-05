@@ -1,0 +1,50 @@
+@(teamDetail:TeamDetail, athleteDetails:List[AthleteDetail])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Team Details</title>
+</head>
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/jquery/jquery.min.js"></script>
+<script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<body>
+<table class="table table-bordered">
+    <tr>
+
+        <th class="text-center">Club Id</th>
+        <th class="text-center">Team Name</th>
+        <th class="text-center">Team Id</th>
+
+    </tr>
+
+
+    <tr>
+
+        <td class="text-center">@teamDetail.getClubId</td>
+        <td class="text-center">@teamDetail.getTeamName</td>
+        <td class="text-center">@teamDetail.getTeamId</td>
+
+
+    </tr>
+
+
+</table>
+
+<table>
+    <th class="text-center">Name</th>
+    <th class="text-center">Course Completed</th>
+    <th class="text-center">Certified Until</th>
+
+
+    @for(athleteDetail<-athleteDetails){
+    <tr>
+        <td class="text-center">@athleteDetail.getAthleteName</td>
+        <td class="text-center">@athleteDetail.getCourseCompleted</td>
+        <td class="text-center">@athleteDetail.getCourseCertificationEndDate</td>
+
+
+    </tr>}
+</table>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@(teams:List [Team])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NewAthlete</title>
+</head>
+<link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+<script src="/assets/lib/jquery/jquery.min.js"></script>
+<script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+<body>
+
+        <div class="container-fluid">
+
+            <form method="post">
+                @helper.CSRF.formField
+                <input type="hidden" name="familyId" value="1">
+
+
+    <label for="teamid">Team : </label>
+    <select class="form-control" id="teamid" name="teamId">
+        @for(team <- teams){
+        <option value="@team.getTeamId">@team.getTeamName</option>
+        }
+    </select>
+    <label>Athlete Name</label> <input id="athleteName" name="athleteName" type="text">
+
+
+
+    <label>Gender</label> <input type="radio"  name="questionSetName" value="M"checked="yes">M
+    <input type="radio"  name="questionSetName" value="F"checked="yes">F
+
+
+    <label>Birth Year</label>
+    <select name="birthYear"  >
+        <option value="2003" >2003</option>
+        <option value="2004" >2004</option>
+        <option value="2005" >2005</option>
+        <option value="2006" >2006</option>
+        <option value="2007" >2007</option>
+
+    </select>
+        <input type="submit" value="Save">
+    </form>
+    <ul>
+
+
+        <li><a href="landing">Home</a></li>
+        <li><a href="club">Club</a></li>
+        <li><a href="family">Family</a></li>
+        <li><a href="team">Team</a></li>
+        <li><a href="newathlete">Add a Player</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
