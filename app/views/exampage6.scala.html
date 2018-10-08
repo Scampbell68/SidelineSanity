@@ -18,30 +18,22 @@
         <input type="hidden" name="familyId" value="1">
 
 
-<h3>Answer these final question and hit "finish" to go back to your page. </h3>
-<h1></h1><br>
+        <h3>Answer these final question and hit "finish" to go back to your page. </h3>
+        <h1></h1><br>
 
 
+        @for(examPage<-examPages){
 
-<ul>
-
-
-    @for(examPage<-examPages){
-
-    <label class="text-light">@examPage.getQuestionSetName</label>
-    <input type="radio"  name="@examPage.getQuestionSetsId" value="Yes">Yes
-    <input type="radio"  name="@examPage.getQuestionSetsId" value="No">No <br>
-    }
-
-</ul>
-
-<form action = "family">
-    <input class= "bg-secondary" type="submit" value="Save and Return" >
-</form>
+        <label class="text-light">@examPage.getQuestionSetName</label>
+        <input type="radio" name="@examPage.getQuestionSetsId" value="Yes">Yes
+        <input type="radio" name="@examPage.getQuestionSetsId" value="No">No <br>
+        }
 
 
+        <input class="bg-secondary" type="submit" value="Save and Return">
+    </form>
 
-</form>
+
 </div>
 </body>
 </html>
