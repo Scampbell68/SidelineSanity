@@ -29,67 +29,101 @@
             }
 
 
-        </ul></div>
-
-        <h1>Family Page</h1>
-    <div class="col-3">
-        <div class="form-group">
-            <label class="text-danger" > Name:</label>
-         <input type="text" value="@family.getFamilyName">
-     </div>
-      </div>
-    <div class="col-3">
-        <div class="form-group">
-
-            <label class="text-danger" > Email:</label>
-            <input type="text" value="@family.getEmail">
-        </div> </div>
-
-    <div class="col-3">
-        <div class="form-group">
-
-            <label class="text-danger" > Phone:</label>
-            <input type="text" value="@family.getPhone">
-        </div> </div>
-    <div class="col-3">
-        <div class="form-group">
-
-            <label class="text-danger" > Club:</label>
-            <input type="text" value="@family.getClubId">
-        </div> </div>
-
-    <div class="col-3">
-        <div class="form-group">
-
-            <label class="text-danger" > Course Completed:</label>
-            <input type="text" value="@family.getCourseCompleted">
-
-        </div> </div>
-    <div class="col-3">
-        <div class="form-group">
-
-            <label class="text-danger" > Certification End Date:</label>
-            <input type="text" value="@family.getCourseCertificationEndDate">
-
-        </div> </div>
-
-
-
-
-        <h3>Navigation</h3> <ul>
-
-        <li><a href="/landing" class="text-white btn btn-link">Home</a></li>
-        <li><a href="/club" class="text-white btn btn-link">Club</a></li>
-
-        <li><a href="/team" class="text-white btn btn-link">Team</a></li>
-        <li><a href="/athlete" class="text-white btn btn-link">Athlete</a></li>
-
-        <li><input class="text-white btn btn-link btn btn-link" type="submit" name="Take course" value="Take course">
-        </li>
-
-        <li><a href="/newathlete" class="text-white btn btn-link">Add a Player</a></li>
         </ul>
+    </div>
 
+    <h1>Family Page</h1>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group">
+                <label class="text-danger"> Name:</label>
+                <input type="text" value="@family.getFamilyName">
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+
+                <label class="text-danger"> Email:</label>
+                <input type="text" value="@family.getEmail">
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="form-group">
+                <label class="text-danger"> Phone:</label>
+                <input type="text" value="@family.getPhone">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-4">
+            <div class="form-group">
+                <label class="text-danger"> Club:</label>
+                <input type="text" value="@family.getClubId">
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="form-group">
+
+                <label class="text-danger"> Certified:</label>
+                <input type="text" value="@family.getCourseCompleted">
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+
+                <label class="text-danger"> Cert Expiration:</label>
+                <input type="text" value="@family.getCourseCertificationEndDate">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Navigation</h3>
+            <ul>
+
+                <li><a href="/landing" class="text-white btn btn-link">Home</a></li>
+                <li><a href="/club" class="text-white btn btn-link">Club</a></li>
+
+                <li><a href="/team" class="text-white btn btn-link">Team</a></li>
+                <li><a href="/athlete" class="text-white btn btn-link">Athlete</a></li>
+
+                <li><input class="text-white btn btn-link btn btn-link" type="submit" name="Take course"
+                           value="Take course">
+                </li>
+
+                <li><a href="/newathlete" class="text-white btn btn-link">Add a Player</a></li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <img class="rounded-circle text-centered" src="/assets/images/laurenAndDad.jpg" width="200">
+        </div>
+
+        <div class="col-4">
+            <div class="col-12">
+                <label class="text-danger"> Athlete 1:</label>
+                <input type="text" value="Billy">
+            </div>
+
+            <div class="col-12"><label class="text-danger"> Athlete 2:</label>
+                <input type="text" value="Sally">
+            </div>
+
+            <div class="col-12"><label class="text-danger"> Athlete 3:</label>
+                <input type="text" value="">
+            </div>
+
+            <div class="col-12"><label class="text-danger"> Athlete 4:</label>
+                <input type="text" value="">
+            </div>
+
+        </div>
+    </div>
 </form>
 </body>
 </html>

@@ -75,10 +75,10 @@ public class FamilyController extends Controller
         int clubId = Integer.parseInt(form.get("clubId"));
         //int teamId = Integer.parseInt(form.get("teamId"));
         String result = new String();
-
+        Family newFamily = new Family();
         if (familyName != null && familyName.length() >= 1)
         {
-            Family newFamily = new Family();
+
             newFamily.setFamilyName(familyName);
             newFamily.setEmail(email);
             newFamily.setPhone(phone);
@@ -91,7 +91,7 @@ public class FamilyController extends Controller
         {
             result = "Not Saved";
         }
-        return redirect("/family");
+        return redirect("/family/"+ newFamily.getFamilyId());
     }
 
 }

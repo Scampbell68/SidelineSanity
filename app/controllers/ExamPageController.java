@@ -159,7 +159,8 @@ public class ExamPageController extends Controller
     {
         result = "Not Saved";
     }
-        return redirect("/family");
+        int familyId=Integer.parseInt(session().get("familyId"));
+        return redirect("/family/"+familyId);
     }
 
 }
