@@ -28,20 +28,23 @@ public class FamilyController extends Controller
     }
 
     @Transactional(readOnly = true)
-    public Result getFamily()
+    public Result getFamily(int familyId)
     {
-        String sql = "SELECT f FROM Family f ORDER by familyName";
-        List<Family> families = jpaApi.em().createQuery(sql, Family.class).getResultList();
+        String familiessql = "SELECT f FROM Family f ORDER by familyName";
 
-        return ok(views.html.families.render(families));
+        String familysql = "SELECT f FROM Family f WHERE familyId=:familyId";
+
+        List<Family> families = jpaApi.em().createQuery(familiessql, Family.class).getResultList();
+        Family family = jpaApi.em().createQuery(familysql, Family.class).setParameter("familyId", familyId).getSingleResult();
+        return ok(views.html.families.render(families, family));
     }
+
     @Transactional(readOnly = true)
     public Result postFamily()
     {
         DynamicForm form = formFactory.form().bindFromRequest();
-        String familyId=(form.get("familyId"));
-        session().put("familyId",familyId);
-
+        String familyId = (form.get("familyId"));
+        session().put("familyId", familyId);
 
 
         return redirect("/exampage");
@@ -80,7 +83,7 @@ public class FamilyController extends Controller
             newFamily.setEmail(email);
             newFamily.setPhone(phone);
             newFamily.setClubId(clubId);
-           // newFamily.setTeamId(teamId);
+            // newFamily.setTeamId(teamId);
 
             jpaApi.em().persist(newFamily);
             result = "Saved";
@@ -88,7 +91,7 @@ public class FamilyController extends Controller
         {
             result = "Not Saved";
         }
-        return ok(familyName);//return redirect("/liststudents");
+        return redirect("/family");
     }
 
 }

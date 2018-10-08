@@ -159,7 +159,7 @@ public class ExamPageController extends Controller
     {
         result = "Not Saved";
     }
-        return ok(result);//return redirect("/liststudents");
+        return redirect("/family");
     }
 
 }

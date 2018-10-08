@@ -1,9 +1,6 @@
 package controllers;
 
 
-
-
-
 import models.Athlete;
 import models.Club;
 import models.Team;
@@ -82,3 +79,35 @@ public class NewAthleteController extends Controller
     }
 
 }
+  /*  @Transactional
+    public Result postExamPage6()
+    {
+        DynamicForm form = formFactory.form().bindFromRequest();
+
+
+        String answerName = form.get("1");
+        String answerName2 = form.get("2");
+        String answerName3 = form.get("3");
+        // int questionSetsId = Integer.parseInt(form.get(""));
+        //int teamId = Integer.parseInt(form.get("teamId"));
+        String result = new String();
+
+        if (athleteName != null && athleteName.length() >= 1)
+        {
+            int familyId=Integer.parseInt(session().get("familyId"));
+            Athlete newAthlete = new Athlete();
+            newAthlete.setAthleteName(athleteName);
+
+            newAthlete.setFamilyId(familyId);
+            newAthlete.setQuestionSetsId(1);
+            // newFamily.setTeamId(teamId);
+
+            jpaApi.em().persist(newAthlete);
+            result = "Saved";
+        } else
+        {
+            result = "Not Saved";
+        } if (athleteName != null && athleteName.length() >= 1)
+
+        return redirect("/family");
+   */

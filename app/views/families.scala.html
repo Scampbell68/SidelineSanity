@@ -1,74 +1,56 @@
-@(families:List [Family])
+@(families:List [Family], family:Family)
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <titl>Family</titl>
+    <title>Family Page</title>
 </head>
 <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/stylesheets/family.css">
+<script src="/assets/lib/popper.js/umd/popper.min.js"></script>
 <script src="/assets/lib/jquery/jquery.min.js"></script>
 <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
 <body>
-<form method="POST">
+<form method="GET">
     @helper.CSRF.formField
 
-    <label for="familyid">Family Id : </label>
-    <select class="form-control" id="familyId" name="familyId">
-        @for(family <- families){
-        <option value="@family.getFamilyId">@family.getFamilyId</option>
-        }
-    </select>
+
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Select Family
+        </button>
+        <ul class="dropdown-menu">
+            @for(family<-families){
+
+            <li>
+                <a href="/family/@family.getFamilyId">@family.getFamilyName</a>
+
+            </li>
+            }
 
 
-    <label for="familyname">Family Name : </label>
-    <select class="form-control" id="familyName" name="familyName">
-        @for(family <- families){
-        <option value="@family.getFamilyId">@family.getFamilyName</option>
-        }
-    </select>
+        </ul></div>
 
-    <select class="form-control" id="email" name="email">
-        @for(family <- families){
-        <option value="@family.getEmail">@family.getEmail</option>
-        }
-    </select>
+        <h1>Family Page</h1>
 
-    <select class="form-control" id="phone" name="phone">
-        @for(family <- families){
-        <option value="@family.getPhone">@family.getPhone</option>
-        }
-    </select>
+        <input type="text" value="@family.getFamilyName">
+        <input type="text" value="@family.getEmail">
 
 
+        <h3>Navigation</h3> <ul>
+        <li><a href="landing" class="text-white btn btn-link">Home</a></li>
+        <li><a href="club" class="text-white btn btn-link">Club</a></li>
 
-    </select>
-    <label>Course Name</label> <input id="courseName" name="courseName" type="text">
+        <li><a href="team" class="text-white btn btn-link">Team</a></li>
+        <li><a href="athlete" class="text-white btn btn-link">Athlete</a></li>
 
-    <label>Course Id</label> <input id="Course Id" name="courseName" type="text"><br>
-    <label>Course Completed</label> <input id="Course Completed" name="courseCompleted" type="text">
-    <label>Certification Ending Date</label> <input id="Course Cert Ending Date" name="courseCertificationEndDate" type="text"><br>
+        <li><input class="text-white btn btn-link btn btn-link" type="submit" name="Take course" value="Take course">
+        </li>
 
-    <label>Athlete Name</label> <input id="athleteName" name="athleteName" type="text">
-    </select>
+        <li><a href="newathlete" class="text-white btn btn-link">Add a Player</a></li>
+        </ul>
 
-
-
-
-<ul>
-
-    <h3>Navigation</h3>
-    <li><a href="landing">Home</a></li>
-    <li><a href="club">Club</a></li>
-    <li><a href="family">Family</a></li>
-    <li><a href="team">Team</a></li>
-    <li><a href="athlete">Athlete</a></li>
-    <li><a href="newfamily">Add Family</a></li>
-    <li><a href="exampage"> Take Course</a></li>
-    <li><a href="newathlete">Add a Player</a></li>
-</ul>
-<input type = "submit" name="take course" value="take course">
 </form>
 </body>
 </html>
+

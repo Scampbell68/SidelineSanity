@@ -15,7 +15,7 @@ GET     /assets/*file                   controllers.Assets.versioned(path="/publ
 GET     /club                           controllers.ClubController.getClub
 GET     /clubdetails                    controllers.ClubController.getClubDetails
 
-GET     /family                         controllers.FamilyController.getFamily
+GET     /family/:familyId               controllers.FamilyController.getFamily(familyId:Integer)
 POST     /family                         controllers.FamilyController.postFamily
 
 GET     /newfamily                      controllers.FamilyController.getNewFamily
